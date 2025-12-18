@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>Images</h1>
+  <ul class="list-group">
+    @for (img of photos(); track img.id) {
+    <li class="p-0">
+      <a
+        [routerLink]="['/photos', img.id]"
+        class="list-group-item list-group-item-action animate__animated animate__fadeIn"
+      >
+        {{ img.id }} - {{ img.author }}
+      </a>
+    </li>
+    } @empty {
+    <li>No images found</li>
+    }
+  </ul>
+</div>

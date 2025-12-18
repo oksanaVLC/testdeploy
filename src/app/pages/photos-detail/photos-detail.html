@@ -1,0 +1,24 @@
+<div class="container mt-5">
+  @if(photoDetail()) {
+  <div class="row animate__animated animate__bounce animate__fadeIn">
+    <div class="col-md-9">
+      <p><strong>Identifier:</strong> {{ photoDetail().id }}</p>
+      <p><strong>Author:</strong> {{ photoDetail().author }}</p>
+      <p><strong>Size:</strong> {{ photoDetail().width }} - {{ photoDetail().height }}</p>
+      <p><strong>Url:</strong> {{ photoDetail().url }}</p>
+      <img
+        style="width: 50%; height: 50%"
+        class="rounded"
+        src="{{ photoDetail().download_url }}"
+        alt="img-test"
+      />
+    </div>
+    <div class="col-md-3">
+      <a class="btn btn-danger" routerLink="/">Back</a>
+    </div>
+  </div>
+
+  }
+</div>
+
+<button class="btn btn-success" (click)="goBack()">Back</button>
